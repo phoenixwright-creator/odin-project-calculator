@@ -32,6 +32,7 @@ let number1 = "";
 let number2 = "";
 let operator = "";
 let total = "";
+let decimal = false;
 
 /*
 premier nombre
@@ -64,6 +65,18 @@ display.innerHTML = "";
 
 document.addEventListener('click', (event) => {
     switch(event.target.id){
+        case "decimal":
+            if(decimal === false){
+                decimal = true;
+                display.innerHTML += event.target.innerHTML;
+                if(operator !== ""){
+                    number2 = Number(display.innerHTML);
+                }
+                else{
+                    number1 = Number(display.innerHTML);
+                }
+                break;
+            }
         case "zero":
             if(display.innerHTML === "+" || display.innerHTML === "-" || display.innerHTML === "*" || display.innerHTML === "/" || total !== ""){
                 total = "";
@@ -72,11 +85,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "one":
@@ -87,11 +98,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "two":
@@ -102,11 +111,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "three":
@@ -117,11 +124,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "four":
@@ -132,11 +137,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "five":
@@ -147,11 +150,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "six":
@@ -162,11 +163,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "seven":
@@ -177,11 +176,9 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "eight":
@@ -192,11 +189,11 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
+                
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
+                
             }
             break;
         case "nine":
@@ -207,37 +204,70 @@ document.addEventListener('click', (event) => {
             display.innerHTML += event.target.innerHTML;
             if(operator !== ""){
                 number2 = Number(display.innerHTML);
-                console.log(number2);
             }
             else{
                 number1 = Number(display.innerHTML);
-                console.log(number1);
             }
             break;
         case "add":
-            if(number1 !== "" && number2 !== ""){
+            if(operator === '/' && number2 === 0){
+                alert('You cannot divide a number by 0.');
+                display.innerHTML = "";
+                number1 = "";
+                number2 = "";
+                operator = "";
+                total = "";
+                break;
+            }
+            else if(number1 !== "" && number2 !== ""){
                 number1 = operate(number1, number2, operator);
             }
             display.innerHTML = "+";
             operator = display.innerHTML;
-            console.log(operator);
             break;
         case "subtract":
-            if(number1 !== "" && number2 !== ""){
+            if(operator === '/' && number2 === 0){
+                alert('You cannot divide a number by 0.');
+                display.innerHTML = "";
+                number1 = "";
+                number2 = "";
+                operator = "";
+                total = "";
+                break;
+            }
+            else if(number1 !== "" && number2 !== ""){
                 number1 = operate(number1, number2, operator);
             }
             display.innerHTML = "-";
             operator = display.innerHTML;
             break;
         case "multiply":
-            if(number1 !== "" && number2 !== ""){
+            if(operator === '/' && number2 === 0){
+                alert('You cannot divide a number by 0.');
+                display.innerHTML = "";
+                number1 = "";
+                number2 = "";
+                operator = "";
+                total = "";
+                break;
+            }
+            else if(number1 !== "" && number2 !== ""){
                 number1 = operate(number1, number2, operator);
             }
             display.innerHTML = "*";
             operator = display.innerHTML;
             break;
         case "divide":
-            if(number1 !== "" && number2 !== ""){
+            if(operator === '/' && number2 === 0){
+                alert('You cannot divide a number by 0.');
+                display.innerHTML = "";
+                number1 = "";
+                number2 = "";
+                operator = "";
+                total = "";
+                break;
+            }
+            else if(number1 !== "" && number2 !== ""){
                 number1 = operate(number1, number2, operator);
             }
             display.innerHTML = "/";
@@ -245,6 +275,10 @@ document.addEventListener('click', (event) => {
             break;
         case "equals":
             total = operate(number1, number2, operator);
+            let hasDecimal = total - Math.floor(total) !== 0;
+            if(hasDecimal){
+                total = total.toFixed(2);
+            }
             display.innerHTML = total;
             number1 = total;
             number2 = "";
