@@ -57,8 +57,6 @@ body{
         "one two three"
         "zero decimal decimal";
     background-color: rgb(88, 130, 245);
-    justify-content: center;
-    align-items: center;
     border: 1px solid black;
 }
 
@@ -77,70 +75,89 @@ body{
 }
 
 #zero{grid-area: zero;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+}
 #one{grid-area: one;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #two{grid-area: two;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #three{grid-area: three;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #four{grid-area: four;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #five{grid-area: five;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #six{grid-area: six;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #seven{grid-area: seven;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #eight{grid-area: eight;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #nine{grid-area: nine;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #decimal{grid-area: decimal;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #add{grid-area: add;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #subtract{grid-area: subtract;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #multiply{grid-area: multiply;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #divide{grid-area: divide;
-border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #clear{grid-area: clear;
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;}
 #equals{grid-area: equals;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
-    height: 100%;
-    width: 100%;}
+}
