@@ -1,8 +1,13 @@
-body{
+body {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+#main-title {
+    padding-bottom: 20px;
 }
 
 #calculator {
@@ -24,29 +29,27 @@ body{
 #display {
     grid-area: display;
     border: 1px solid black;
-    height: 100%;
-    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
 }
 
-#equals-container{
+#equals-container {
     grid-area: equals-container;
     display: grid;
     grid-template-areas: "equals";
-    background-color: rgb(32, 64, 245);
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(82, 107, 248);
 }
 
-#clear-container{
+#clear-container {
     grid-area: clear-container;
     display: grid;
     grid-template-areas: "clear";
-    background-color: red;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(252, 59, 59);
 }
 
-#numbers{
+#numbers {
     grid-area: numbers;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -56,11 +59,10 @@ body{
         "four five six"
         "one two three"
         "zero decimal decimal";
-    background-color: rgb(88, 130, 245);
-    border: 1px solid black;
+    background-color: rgb(152, 179, 255);
 }
 
-#operators{
+#operators {
     grid-area: operators;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
@@ -69,95 +71,170 @@ body{
         "subtract"
         "multiply"
         "divide";
-    background-color: gray;
-    justify-content: center;
-    align-items: center;
+    background-color: rgb(158, 157, 157);
 }
 
-#zero{grid-area: zero;
+#zero {
+    grid-area: zero;
     display: grid;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
 }
-#one{grid-area: one;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#two{grid-area: two;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#three{grid-area: three;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#four{grid-area: four;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#five{grid-area: five;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#six{grid-area: six;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#seven{grid-area: seven;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#eight{grid-area: eight;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#nine{grid-area: nine;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#decimal{grid-area: decimal;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#add{grid-area: add;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#subtract{grid-area: subtract;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#multiply{grid-area: multiply;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#divide{grid-area: divide;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#clear{grid-area: clear;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;}
-#equals{grid-area: equals;
+
+#one {
+    grid-area: one;
     display: grid;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+}
+
+#two {
+    grid-area: two;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#three {
+    grid-area: three;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#four {
+    grid-area: four;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#five {
+    grid-area: five;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#six {
+    grid-area: six;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#seven {
+    grid-area: seven;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#eight {
+    grid-area: eight;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#nine {
+    grid-area: nine;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#decimal {
+    grid-area: decimal;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#add {
+    grid-area: add;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#subtract {
+    grid-area: subtract;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#multiply {
+    grid-area: multiply;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#divide {
+    grid-area: divide;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#clear {
+    grid-area: clear;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#equals {
+    grid-area: equals;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+#author {
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+#profile-link {
+    font-weight: bold;
+}
+
+#profile-link:link {
+    color: black;
+    text-decoration: none;
+}
+
+#profile-link:visited {
+    color: black;
+    text-decoration: none;
+}
+
+#profile-link:hover {
+    color: rgb(80, 79, 79);
+    text-decoration: underline;
+}
+
+#profile-link:active {
+    color: rgb(80, 79, 79);
+    text-decoration: underline;
 }
